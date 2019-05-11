@@ -6,6 +6,12 @@ body {
 .jumbotron {
     background-color: bisque;
     text-align: center;
+    max-height: 50px;
+}
+
+.container {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .card {
@@ -29,4 +35,14 @@ body {
 .col-md-4, .col-md-2, .col-md-6 {
     display; block;
     margin: 10px;
+}
+
+h1 {
+    font-family: 'Flavors', cursive;
+    margin: auto;
+    align-content: center;
+}
+
+.word {
+    letter-spacing: 5px;
 }
