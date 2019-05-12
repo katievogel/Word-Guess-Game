@@ -13,13 +13,37 @@ function randomWord (wordList) {
     return wordList[Math.floor(Math.random() * wordList.length)];
 }
 
+var underscores = [];
 var letterCount = function (word) {
-    var underscores = [];
-    for (i=0; i < word.length; i++) {
+    for (i = 0; i < word.length; i++) {
         underscores[i] = "_";
     }
     document.querySelector('.word').innerHTML = underscores.join(" ");
 }
 letterCount(word);
+var wrongGuess =[];
+var chancesLeft = word.length + 3;
+document.querySelector('.num-chances').innerHTML = chancesLeft;
+document.onkeyup = function (guess) {
+    if (chancesLeft > 0) { 
+    if (!guess.key.toUpperCase().match(/^[A-Za-z]$/)) {
+        return;
+    }
+    var found = false;
+    for (var j = 0; j < word.length; j++) {
+        if (word[j] === guess.key.toUpperCase()) {
+            found = true;
+            underscores[j] = guess.key.toUpperCase();
+            document.querySelector('.word').innerHTML = underscores.join(" ");
+        } 
+    }
+    if (!found) {
+        wrongGuess.push(guess.key.toUpperCase());
+        document.querySelector('.letters-chosen').innerHTML = wrongGuess.join(" ");
+        chancessLeft = chancesLeft--;
+        document.querySelector('.num-chances').innerHTML = chancesLeft;
+    } 
+    
 
-setup();
+    }
+}

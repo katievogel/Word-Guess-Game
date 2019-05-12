@@ -1,11 +1,29 @@
-var word ="Manatee";
+var word = "Manatee";
+var word2 = "____t__"
+var word2 = ['_', '_', '_', '_', 't', '_' ,'_']
 var lettersGuess = [];
+var 
+
+
 var chances = 0;
 var wins = 0;
+
+
+
+
+
 document.addEventListener("keydown", anyKey, false);
+
+
+
+
+
 
 function anyKey(e) {
     console.log(e);
+    // if keyPressed is in the word
+    // then show the letter in the document
+
     document.querySelector('.word').innerText='reset';
 }
 
