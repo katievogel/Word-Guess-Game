@@ -1,12 +1,12 @@
 body {
-    background-color: #587d4d;
+    background-color: #dcfad0;
     background-image: url("https://www.transparenttextures.com/patterns/gravel.png");
 } 
 
 .jumbotron {
-    background-color: bisque;
+    background-color: #f5f2e2;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
     text-align: center;
-    max-height: 50px;
 }
 
 .container {
@@ -17,19 +17,19 @@ body {
 .card {
     margin: auto;
     max-width: 400px;
-    background-color: bisque;
 }
 
 .game-container {
     margin: auto;
     max-width: 800px;
     height: auto;
-    background-color: white;
+    background-color: #FFF8DC;
 }
 
 .card-body {
     margin: 10px;
-    border: 1px solid black;
+    border: 5px dotted #006400;
+    background-color: #FFF8DC;
 }
 
 .col-md-4, .col-md-2, .col-md-6 {
@@ -45,4 +45,20 @@ h1 {
 
 .word {
     letter-spacing: 5px;
+}
+
+.card-footer {
+    background-color: #f5f2e2;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: auto;
+}
+
+.btn {
+    background-color: #66CDAA;
+    margin-top: 200px;
 }
