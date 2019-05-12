@@ -1,6 +1,6 @@
 var wins = 0;
 
-var gameStart = function setup(word) {
+function setup(word) {
     var listElement = document.querySelector('.word')
     for (var i = 0; i < word.length; i++) {
         listElement.append(word[i]);
@@ -43,15 +43,20 @@ document.onkeyup = function (guess) {
             document.querySelector('.letters-chosen').innerHTML = wrongGuess.join(" ");
             chancessLeft = chancesLeft--;
             document.querySelector('.num-chances').innerHTML = chancesLeft;
+            //Couldn't determine how to avoid logging duplicate letter choices
         }
 
 
     }
 }
-document.querySelector('.btn').onclick =
-    function nextGame() {
-       gameStart.replace(setup(word), randomWord(wordList));
-    }
+// Couldn't get a 'new game' button to function quite right as it kept adding a new one to the end of the existing one:
+
+// document.querySelector('.btn').onclick =
+//     function nextGame() {
+//        word.replace(setup(word), randomWord(wordList));
+//     }
+
+
 //Couldn't quite figure out how to tally up wins. Started with the code below, trying to write a function that takes into account when the Chances Left is equal or grater to 0 and all of the underscores have been replaced with letters:
 
 // function victory () {
