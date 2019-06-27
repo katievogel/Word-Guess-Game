@@ -21,6 +21,8 @@ var letterCount = function (word) {
     }
     document.querySelector('.word').innerHTML = underscores.join(" ");
 }
+
+
 letterCount(word);
 var wrongGuess = [];
 var chancesLeft = word.length + 3;
@@ -49,12 +51,13 @@ document.onkeyup = function (guess) {
 
     }
 }
-// Couldn't get a 'new game' button to function quite right as it kept adding a new one to the end of the existing one:
 
-// document.querySelector('.btn').onclick =
-//     function nextGame() {
-//        word.replace(setup(word), randomWord(wordList));
-//     }
+document.querySelector('.btn').onclick =
+    function nextGame() {
+        var newWord = randomWord(wordList);
+        var foo = setup(newWord);
+        word.replace(foo, newWord);
+    }
 
 
 //Couldn't quite figure out how to tally up wins. Started with the code below, trying to write a function that takes into account when the Chances Left is equal or grater to 0 and all of the underscores have been replaced with letters:
