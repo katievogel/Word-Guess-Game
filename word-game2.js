@@ -13,19 +13,13 @@ var letterCount = function (word) {
     document.querySelector('.word').innerHTML = underscores.join(" ");
 }
 
-// function setup(word) {
-//     var listElement = document.querySelector('.word')
-//     for (var i = 0; i < word.length; i++) {
-//         listElement.append(word[i]);
-//     }
-// }
 var wordList = ['GRIZZLYBEAR', 'MONGOOSE', 'CHEETAH', 'ARMADILLO', 'ORCA', 'ORYX', 'KANGAROO', 'PANGOLIN', 'MANATEE', 'QUOKKA', 'WALLABE', 'OSTRICH', 'BISON', 'LION', 'COBRA', 'RATTLESNAKE', 'ANENOME', 'PORCUPINE', 'HEDGEHOG', 'WOLF', 'TIGER', 'HYENA', 'DOLPHIN', 'CRAB', 'LOBSTER', 'KOALA', 'JELLYFISH', 'ALBATROSS', 'CONDOR', 'RAVEN', 'NARWHAL', 'LEOPARD', 'JAGUAR', 'CAPYBARA', 'CROCODILE', 'ALLIGATOR', 'GAZELLE', 'CAMEL', 'HORSE', 'DONKEY'];
 var word = randomWord(wordList);
 letterCount(word);
 
 function randomWord(wordList) {
     return wordList[Math.floor(Math.random() * wordList.length)];
-}
+};
 
 var wrongGuess = [];
 document.onkeyup = function (guess) {
@@ -42,28 +36,39 @@ document.onkeyup = function (guess) {
             }
         }
         if (!found) {
-            wrongGuess.push(guess.key.toUpperCase());
-            document.querySelector('.letters-chosen').innerHTML = wrongGuess.join(" ");
-            chancessLeft = chancesLeft--;
-            document.querySelector('.num-chances').innerHTML = chancesLeft;
-            //Couldn't determine how to avoid logging duplicate letter choices
+            if (!contains(wrongGuess, guess.key.toUpperCase())) {
+                wrongGuess.push(guess.key.toUpperCase());
+                document.querySelector('.letters-chosen').innerHTML = wrongGuess.join(" ");
+                chancessLeft = chancesLeft--;
+                document.querySelector('.num-chances').innerHTML = chancesLeft;
+            } else {
+                return;
+            }
+            victory();
         }
-
-
     }
-}
+};
 
 document.querySelector('.btn').onclick =
     function nextGame() {
         word = randomWord(wordList);
         var newUnderscores = letterCount(word);
+        $('.letters-chosen').html("");
+    };
+
+
+function contains(haystack, needle) {
+    for (var i = 0; i < haystack.length; ++i) {
+        if (haystack[i] === needle) {
+            return true;
+        }
     }
+    return false;
+};
 
-
-//Couldn't quite figure out how to tally up wins. Started with the code below, trying to write a function that takes into account when the Chances Left is equal or grater to 0 and all of the underscores have been replaced with letters:
-
-// function victory () {
-//     (chancesLeft >= 0 && underscores.match(/^[A-Za-z]+$/));
-//     wins = wins++;
-//     document.querySelector('.games-won').innerHTML = wins;
-// }
+function victory() {
+    if (chancesLeft >= 0 && !contains(underscores, '_')) {
+        wins++;
+        $('.games-won').html(wins);
+    }
+}
