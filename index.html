@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="UTF-8" />
     <title>Animal Word Game</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Flavors" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Skranji&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">Animal Name Game</h1>
+            <h1 class="display-4">Animal Name Game</h1>
         </div>
     </div>
-      <div class = "game-container">
-            <div class="row">
-                <div class="col-md-4">
+    <div class="game-container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
                     <div class="card-body">
-                    <h5 class="card-title">Wins</h5>
-                    <p class="card-text"><span class="games-won"></span></p>
-                    <div>
-                        <button type="button" class="btn btn-primary btn-lg">New Word</button>
-                    </div>
-                    </div>
-                </div>          
-            <div class="col-md-6">
-                 <div class="card-body">
-                    <h5 class="card-title">Press any key to begin. Enter letters to guess the animal name below until you run out of letter guesses.</h5>
-                    <p class="card-text"> Current Word</p>
-                    <p class="card-text">
-                        <ul class="word"></ul>
-                    </p>
-                    <p class="card-text">Chances Left</p>
-                    <p><span class="num-chances"></span></p>
-                    <p class="card-text">Letters Guessed</p>
-                    <p><span class="letters-chosen"></span></p>
-                    </div>
+                        <h5 class="card-title">Wins</h5>
+                        <p class="card-text"><span class="games-won"></span></p>
+                        <div>
+                            <button type="button" class="btn btn-primary btn-lg">New Word</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div> 
-    </div> 
-    <div class="card-footer"> A word game for class
-      </div>  
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>     
-<script src="word-game2.js"></script>
+            <div class="col-md-7">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Press any key to begin. Enter letters to guess the animal name below
+                            until
+                            you run out of letter guesses.</h5>
+                        <p class="card-text"> Current Word</p>
+                        <p class="card-text">
+                            <ul class="word"></ul>
+                        </p>
+                        <p class="card-text">Chances Left</p>
+                        <p><span class="num-chances"></span></p>
+                        <p class="card-text">Letters Guessed</p>
+                        <p><span class="letters-chosen"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="word-game2.js"></script>
 
 </body>
+
 </html>

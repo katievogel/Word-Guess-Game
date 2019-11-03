@@ -1,6 +1,7 @@
 body {
     background-color: #dcfad0;
     background-image: url("https://www.transparenttextures.com/patterns/gravel.png");
+    font-family: 'Skranji', cursive;
 } 
 
 .jumbotron {
@@ -15,26 +16,23 @@ body {
 }
 
 .card {
-    margin: auto;
-    max-width: 400px;
+    margin: 10px;
 }
 
 .game-container {
     margin: auto;
-    max-width: 800px;
+    max-width: 900px;
     height: auto;
     background-color: #FFF8DC;
 }
 
 .card-body {
-    margin: 10px;
     border: 5px dotted #006400;
-    background-color: #FFF8DC;
+    background-color: #FFF8DC; 
 }
 
-.col-md-4, .col-md-2, .col-md-6 {
-    display: block;
-    margin: 10px;
+.col-md-4, .col-md-7 {
+    margin: 15px;
 }
 
 h1 {
@@ -61,4 +59,8 @@ h1 {
 .btn {
     background-color: #66CDAA;
     margin-top: 200px;
+}
+
+span {
+    padding: 10px;
 }
