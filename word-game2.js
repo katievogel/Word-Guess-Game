@@ -43,9 +43,9 @@ document.onkeyup = function (guess) {
                 document.querySelector('.num-chances').innerHTML = chancesLeft;
             } else {
                 return;
-            }
-            victory();
+            }   
         }
+        victory();
     }
 };
 
@@ -70,5 +70,7 @@ function victory() {
     if (chancesLeft >= 0 && !contains(underscores, '_')) {
         wins++;
         $('.games-won').html(wins);
+        console.log("chances left: " + chancesLeft);
+        console.log("wins: " + wins);
     }
 }
