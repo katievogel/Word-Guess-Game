@@ -54,6 +54,7 @@ document.querySelector('.btn').onclick =
         word = randomWord(wordList);
         var newUnderscores = letterCount(word);
         $('.letters-chosen').html("");
+        wrongGuess = [];
     };
 
 
