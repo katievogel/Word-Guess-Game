@@ -20,25 +20,27 @@
     <div class="game-container">
         <div class="row">
             <div class="col-md-4">
-                <div class="card text-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title d-inline-block align-middle">Wins</h5>
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Wins</h5>
                         <p class="card-text"><span class="games-won"></span></p>
-                        <div>
-                            <button type="button" class="btn btn-primary btn-lg">New Word</button>
-                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <button type="button" class="btn btn-primary btn-lg">New Word</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-7">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Press any key to begin. Enter letters to guess the animal name below
-                            until
-                            you run out of letter guesses.</h5>
+                <div class="card">
+                    <div class="card-body game">
+                        <h5 class="card-text">Press any key to begin. Enter letters to guess the animal name below until you run out of letter guesses.</h5>
                         <p class="card-text"> Current Word</p>
                         <p class="card-text">
-                            <ul class="word"></ul>
+                            <span class="word"></span>
                         </p>
                         <p class="card-text">Chances Left</p>
                         <p><span class="num-chances"></span></p>
@@ -49,7 +51,9 @@
             </div>
         </div>
     </div>
-   
+    </div>
+    </div>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="word-game2.js"></script>
 

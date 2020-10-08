@@ -1,12 +1,10 @@
 body {
-    background-color: #dcfad0;
-    background-image: url("https://www.transparenttextures.com/patterns/gravel.png");
+    background-color: #d5f8c6;
     font-family: 'Skranji', cursive;
 } 
 
 .jumbotron {
-    background-color: #f5f2e2;
-    background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
+    background-color: #fcac45 ;
     text-align: center;
 }
 
@@ -17,22 +15,27 @@ body {
 
 .card {
     margin: 10px;
+    background-color: #FFF8DC;
+    text-align: center;
 }
 
 .game-container {
     margin: auto;
     max-width: 900px;
     height: auto;
-    background-color: #FFF8DC;
+    background-color: #d5f8c6;
 }
 
-.card-body {
-    border: 5px dotted #006400;
-    background-color: #FFF8DC; 
+
+.game {
+    padding: 50px;
+}
+span, p {
+    align-items: center;
 }
 
 .col-md-4, .col-md-7 {
-    margin: 15px;
+    margin: 10px;
 }
 
 h1 {
@@ -45,22 +48,25 @@ h1 {
     letter-spacing: 5px;
 }
 
-.card-footer {
-    background-color: #f5f2e2;
-    background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin: auto;
-}
-
 .btn {
     background-color: #66CDAA;
     margin-top: 200px;
+    border: none;
 }
 
 span {
     padding: 10px;
+}
+
+.card-header {
+    background-color: #66CDAA;
+    justify-content: center;
+}
+
+.card-title {
+    margin: auto;
+}
+
+.games-won {
+    font-size: xx-large;
 }
