@@ -64,7 +64,7 @@ document.querySelector('.btn').onclick =
         wrongGuess = [];
     };
 
-
+//this needle in a haystack function is used in the larger function above to check if letters are or are not in in a word
 function contains(haystack, needle) {
     for (var i = 0; i < haystack.length; ++i) {
         if (haystack[i] === needle) {
@@ -73,12 +73,17 @@ function contains(haystack, needle) {
     }
     return false;
 };
-//records the number of wins//
+
+//records the number of wins and losses//
 function victory() {
     if (chancesLeft >= 0 && !contains(underscores, '_')) {
         wins++;
         $('.games-won').html(wins);
         console.log("chances left: " + chancesLeft);
         console.log("wins: " + wins);
+    } else  if (chancesLeft <=0 && contains(underscores, '_')) {
+        losses++;
+        $('.games-lost').html(losses);
+        console.log("losses: " + losses);
     }
 }
