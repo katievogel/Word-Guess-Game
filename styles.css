@@ -1,15 +1,14 @@
 body {
-    background-color: #d5f8c6;
     font-family: 'Skranji', cursive;
-    background-image: url('sunset-animals.jpg');
+    background-color: #baf2bc;
+    background-image: url("sunset.jpg");
     background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover;
 } 
 
 .jumbotron {
-    background-color: #fcac45 ;
+    background-color: #66CDAA;
     text-align: center;
+    align-content: center;
 }
 
 .container {
