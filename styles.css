@@ -1,6 +1,10 @@
 body {
     background-color: #d5f8c6;
     font-family: 'Skranji', cursive;
+    background-image: url('sunset-animals.jpg');
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
 } 
 
 .jumbotron {
@@ -17,13 +21,21 @@ body {
     margin: 10px;
     background-color: #FFF8DC;
     text-align: center;
+    border: none;
+}
+
+.card-for-button {
+    margin: 10px;
+    background-color: none!important;
+    text-align: center;
+    border: none;
 }
 
 .game-container {
     margin: auto;
     max-width: 900px;
     height: auto;
-    background-color: #d5f8c6;
+    background-color: none;
 }
 
 
@@ -50,8 +62,9 @@ h1 {
 
 .btn {
     background-color: #66CDAA;
-    margin-top: 200px;
     border: none;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 span {
@@ -67,6 +80,6 @@ span {
     margin: auto;
 }
 
-.games-won {
+.games-won, .games-lost {
     font-size: xx-large;
 }
