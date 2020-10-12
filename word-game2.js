@@ -1,7 +1,10 @@
+//global variables//
 var wins = 0;
+var losses = 0;
 
 var chancesLeft;
 
+//creates underscores for each letter in the word to guess, and sets the number of chances a player has to guess the word, by looping through each word// 
 var underscores = [];
 var letterCount = function (word) {
     underscores = [];
@@ -13,140 +16,18 @@ var letterCount = function (word) {
     document.querySelector('.word').innerHTML = underscores.join(" ");
 }
 
-wordList = {
-    'animal': {
-        'species': {
-            'GRIZZLYBEAR': [
-                { 'fact': 'bear fact' },
-                { 'pic': 'bear image' }],
-            'MONGOOSE': [
-                { 'fact': 'mongoose fact' },
-                { 'pic': 'mongoose fact' }],
-            'CHEETAH': [
-                { 'fact': 'cheetah pic' },
-                { 'pic': 'cheetah pic' }],
-            'ARMADILLO': [
-                { 'fact': 'armadillo fact' },
-                { 'pic': 'armadillo pic' }],
-            'ORCA': [
-                { 'fact': 'orca fact' },
-                { 'pic': 'orca pic' }],
-            'ORYX': [
-                { 'fact': 'oryx fact' },
-                { 'pic': 'oryx pic' }],
-            'KANGAROO': [
-                { 'fact': 'kangaroo fact' },
-                { 'pic': 'kangaroo pic' }],
-            'PANGOLIN': [
-                { 'fact': 'pangolin fact' },
-                { 'pic': 'pangolin pic' }],
-            'MANATEE': [
-                { 'fact': 'manatee fact' },
-                { 'pic': 'manatee pic' }],
-            'QUOKKA': [
-                { 'fact': 'quokka fact' },
-                { 'pic': 'quokka pic' }],
-            'WALLABE': [
-                { 'fact': 'wallabe fact' },
-                { 'pic': 'wallabe pic' }],
-            'OSTRICH': [
-                { 'fact': 'ostrich fact' },
-                { 'pic': 'ostrich pic' }],
-            'BISON': [
-                { 'fact': 'bison fact' },
-                { 'pic': 'bison pic' }],
-            'LION': [
-                { 'fact': 'lion fact' },
-                { 'pic': 'lion pic' }],
-            'COBRA': [
-                { 'fact': 'cobra fact' },
-                { 'pic': 'cobra pic' }],
-            'RATTLESNAKE': [
-                { 'fact': 'rattlesnake fact' },
-                { 'pic': 'rattlesnake pic' }],
-            'ANENOME': [
-                { 'fact': 'anenome fact' },
-                { 'pic': 'anenome pic' }],
-            'PORCUPINE': [
-                { 'fact': 'porcupine fact' },
-                { 'pic': 'porcupine pic' }],
-            'HEDGEHOG': [
-                { 'fact': 'hedgehog fact' },
-                { 'pic': 'hedgehog pic' }],
-            'WOLF': [
-                { 'fact': 'wolf fact' },
-                { 'pic': 'wolf pic' }],
-            'TIGER': [
-                { 'fact': 'tiger fact' },
-                { 'pic': 'tiger pic' }],
-            'HYENA': [
-                { 'fact': 'hyena fact' },
-                { 'pic': 'hyena pic' }],
-            'DOLPHIN': [
-                { 'fact': 'dolphin fact' },
-                { 'pic': 'dolphin pic' }],
-            'CRAB': [
-                { 'fact': 'crab fact' },
-                { 'pic': 'crab pic' }],
-            'LOBSTER': [
-                { 'fact': 'lobster fact' },
-                { 'pic': 'lobster pic' }],
-            'KOALA': [
-                { 'fact': 'koala fact' },
-                { 'pic': 'koala pic' }],
-            'JELLYFISH': [
-                { 'fact': 'jellyfish fact' },
-                { 'pic': 'jellyfish pic' }],
-            'ALBATROSS': [
-                { 'fact': 'albatross fact' },
-                { 'pic': 'albatross pic' }],
-            'CONDOR': [
-                { 'fact': 'condor fact' },
-                { 'pic': 'condor pic' }],
-            'RAVEN': [
-                { 'fact': 'raven fact' },
-                { 'pic': 'raven pic' }],
-            'NARWHAL': [
-                { 'fact': 'narwhal fact' },
-                { 'pic': 'narwhal pic' }],
-            'LEOPARD': [
-                { 'fact': 'leopard fact' },
-                { 'pic': 'leopard pic' }],
-            'JAGUAR': [
-                { 'fact': 'jaguar fact' },
-                { 'pic': 'jaguar pic' }],
-            'CAPYBARA': [
-                { 'fact': 'capybara fact' },
-                { 'pic': 'capybara pic' }],
-            'CROCODILE': [
-                { 'fact': 'crocodile fact' },
-                { 'pic': 'crocodile pic' }],
-            'ALLIGATOR': [
-                { 'fact': 'alligator fact' },
-                { 'pic': 'alligator pic' }],
-            'GAZELLE': [
-                { 'fact': 'gazelle fact' },
-                { 'pic': 'gazelle pic' }],
-            'CAMEL': [
-                { 'fact': 'camel fact' },
-                { 'pic': 'camel pic' }],
-            'HORSE': [
-                { 'fact': 'horse fact' },
-                { 'pic': 'horse pic' }],
-            'DONKEY': [
-                { 'fact': 'donkey fact' },
-                { 'pic': 'donkey pic' }],
-        }
-    }
-}
+//the list of words in the game. probably should hide this elsewhere so snoops don't use the inspect tools in the browser to find it... cheaters.//
+var wordList = ['GRIZZLYBEAR', 'MONGOOSE', 'CHEETAH', 'ARMADILLO', 'ORCA', 'ORYX', 'KANGAROO', 'PANGOLIN', 'MANATEE', 'QUOKKA', 'WALLABE', 'OSTRICH', 'BISON', 'LION', 'COBRA', 'RATTLESNAKE', 'ANENOME', 'PORCUPINE', 'HEDGEHOG', 'WOLF', 'TIGER', 'HYENA', 'DOLPHIN', 'CRAB', 'LOBSTER', 'KOALA', 'JELLYFISH', 'ALBATROSS', 'CONDOR', 'RAVEN', 'NARWHAL', 'LEOPARD', 'JAGUAR', 'CAPYBARA', 'CROCODILE', 'ALLIGATOR', 'GAZELLE', 'CAMEL', 'HORSE', 'DONKEY'];
 
 var word = randomWord(wordList);
 letterCount(word);
 
+//simple function chooses a random word from the word list//
 function randomWord(wordList) {
     return wordList[Math.floor(Math.random() * wordList.length)];
 };
 
+//records the number of wrong guesses. also converts to uppercase letters to always ensure matching functionality. does not allow numbers, special characters either. populates the wrong guesses on the page so the player can see what they tried already. duplicate guesses are now allowed or counted against the player//
 var wrongGuess = [];
 document.onkeyup = function (guess) {
     if (chancesLeft > 0) {
@@ -169,12 +50,12 @@ document.onkeyup = function (guess) {
                 document.querySelector('.num-chances').innerHTML = chancesLeft;
             } else {
                 return;
-            }
+            }   
         }
         victory();
     }
 };
-
+//button functions to generate the new word and clear the letters that have been guessed//
 document.querySelector('.btn').onclick =
     function nextGame() {
         word = randomWord(wordList);
@@ -192,7 +73,7 @@ function contains(haystack, needle) {
     }
     return false;
 };
-
+//records the number of wins//
 function victory() {
     if (chancesLeft >= 0 && !contains(underscores, '_')) {
         wins++;
