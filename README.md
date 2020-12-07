@@ -1,4 +1,4 @@
-# Word-Guess-Game
+# Animal Name Hangman
 This is a hangman game where the user must guess letters for certain animal names. Wins and losses are recorded on the screen. That's it. That's the game. 
 
 ## Technology Used
